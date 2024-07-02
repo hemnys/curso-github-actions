@@ -1,13 +1,15 @@
-name: Aprendiendo GitHub Actions #Nombre del workflow
-run-name: ¡Estoy aprendiendo Github Actions!
+name: Aprendiendo GitHub Actions #Nombre del workflow (sidebar)
+run-name: ¡Estoy aprendiendo Github Actions! # titulo que se ve en los workflows del action (tabla de workflows)
 on: [push] #evento que lo activará
-jobs: #Definición de los jobs
+jobs: #Definición de los jobs, tambien los agrupa
   hola-mundo: #Nombre del job
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
-      - uses: actions/checkout@v3
+      - name: Checkout #nombre que identifica el step
+      - uses: actions/checkout@v3 # action del step autor / nombre del action @ version
+      - name: Adding node
       - uses: actions/setup-node@v3
-        with:
+        with: # para especificar una version de node en especifico
           node-version: 18
       - name: Run index
-        run: node index.js
+        run: node index.js # indica que comando utilizar en el run
