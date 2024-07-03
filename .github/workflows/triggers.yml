@@ -24,9 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Definir nombre
-        run: echo "USERNAME=${{ inputs.nombre }}" >> $GITHUB_ENV
+        run: echo ${{ inputs.nombre }}
       - name: Definir lenguaje
-        run: echo "LANGUAGE=${{ inputs.lenguaje_favorito }}" >> $GITHUB_ENV
+        run: echo ${{ inputs.lenguaje_favorito }}
 
   hola-mundo:
     if: ${{ github.event_name != 'workflow_dispatch' }}
@@ -35,5 +35,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Definir variable
-        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+        run: echo ${{ github.actor }}
     
