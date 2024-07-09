@@ -6,7 +6,7 @@ jobs: #Definición de los jobs, tambien los agrupa
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: Checkout #nombre que identifica el step
-        uses: actions/checkout@v3 # action del step autor / nombre del action @ version
+        uses: actions/checkout@v4 # action del step autor / nombre del action @ version
       - name: Adding node
         uses: actions/setup-node@v3
         with: # para especificar una version de node en especifico
