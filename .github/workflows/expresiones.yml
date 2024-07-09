@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es mayor de edad y es ${{ estado_civil }}
+        run: echo ${{ inputs.nombre }} es mayor de edad y es ${{ inputs.estado_civil }}
   menor:
     if: ${{ inputs.edad < 18 }} 
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es menor de edad y es ${{ estado_civil }}
+        run: echo ${{ inputs.nombre }} es menor de edad y es ${{ inputs.estado_civil }}
