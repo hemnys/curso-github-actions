@@ -12,16 +12,23 @@ on:
         required: true
         default: 'Juan'
         type: string
+      estado_civil:
+        description: 'Estado Civil'
+        required: true
+        default: 'Soltero'
+        type: choice
+        options: [Soltero,Casado]
+        
 jobs:
   mayor:
     if: ${{ inputs.edad >= 18 }} 
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es mayor de edad
+        run: echo ${{ inputs.nombre }} es mayor de edad y es ${{ estado_civil }}
   menor:
     if: ${{ inputs.edad < 18 }} 
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es menor de edad
+        run: echo ${{ inputs.nombre }} es menor de edad y es ${{ estado_civil }}
