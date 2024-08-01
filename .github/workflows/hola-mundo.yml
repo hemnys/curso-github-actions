@@ -8,7 +8,7 @@ jobs: #Definición de los jobs, tambien los agrupa
       - name: Checkout #nombre que identifica el step
         uses: actions/checkout@v4 # action del step autor / nombre del action @ version
       - name: Adding node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with: # para especificar una version de node en especifico
           node-version: 18
       - name: Run index
